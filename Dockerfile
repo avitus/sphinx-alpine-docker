@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM alpine:3.4
 MAINTAINER James White <dev.jameswhite@gmail.com>
 
 ADD sphinx.conf /etc/sphinx/sphinx.conf
