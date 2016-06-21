@@ -12,6 +12,13 @@ RUN echo "http://dl-5.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositor
 	&& mkdir -p /var/db/sphinx \
 	&& mkdir -p /var/run/sphinx
 
-EXPOSE 9306
+EXPOSE 9306 9312
 
-CMD searchd --nodetach
+# scripts
+ADD searchd.sh /
+RUN chmod a+x searchd.sh
+ADD indexall.sh /
+RUN chmod a+x indexall.sh
+
+# run the script
+CMD ["./indexall.sh"]
