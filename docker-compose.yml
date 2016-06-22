@@ -1,6 +1,6 @@
 version: '2'
 services:
-    sphinx:
+    search:
         build: .
         ports:
             - "9306:9306"
