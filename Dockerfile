@@ -13,7 +13,8 @@ RUN echo "http://dl-5.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositor
 	&& mkdir -p /var/db/sphinx \
 	&& mkdir -p /var/run/sphinx
 
-EXPOSE 9306
+# Expose 9312 for client connections, 9306 for SQL connections
+EXPOSE 9312 9306
 
 # scripts
 RUN mkdir /usr/app
